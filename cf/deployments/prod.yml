@@ -1,1 +1,1 @@
-template-file: ./cf/apps/vpc.yml
+template-file-path: ./cf/apps/vpc.yml
