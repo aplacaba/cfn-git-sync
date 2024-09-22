@@ -1,5 +1,8 @@
 AWSTemplateFormatVersion: "2010-09-09"
 
+Parameters:
+  ClusterName:
+    Type: String
 
 Resources:
   VPC:
@@ -12,3 +15,16 @@ Resources:
     Properties:
       VpcId: !Ref VPC
       CidrBlock: 10.0.0.1/16
+
+  Cluster:
+    Type: AWS::ECS::Cluster
+    Properties:
+      CapacityProviders:
+        - FARGATE
+        ClusterName: !Ref ClusterName
+      DefaultCapacityProviderStrategy:
+        - CapacityProvider: FARGATE
+          Weight: 100
+      ClusterSettings:
+        - Name: containerInsights
+          Value: enabled
