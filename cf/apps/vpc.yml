@@ -21,7 +21,7 @@ Resources:
     Properties:
       CapacityProviders:
         - FARGATE
-        ClusterName: !Ref ClusterName
+      ClusterName: !Ref ClusterName
       DefaultCapacityProviderStrategy:
         - CapacityProvider: FARGATE
           Weight: 100
