@@ -1,0 +1,4 @@
+template-file-path: ./cf/apps/vpc.yml
+
+parameters:
+  ClusterName: qa
